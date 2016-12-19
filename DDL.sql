@@ -3,7 +3,7 @@ CREATE DATABASE musikagentur;
 USE musikagentur;
 
 CREATE TABLE tbl_ort (
-  id int(11) NOT NULL AUTO_INCREMENT Primary KEy,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   plz int(11) not null,
   name_ortschaft varchar(50) not null,
   Provinz varchar(50) not null,
@@ -12,13 +12,11 @@ CREATE TABLE tbl_ort (
 
 CREATE TABLE tbl_instrument (
   id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
-  name_instrument varchar(50),
-
-  PRIMARY KEY (id)
+  name_instrument varchar(50)
 );
 
 CREATE TABLE tbl_person (
-  id int(11) NOT NULL AUTO_INCREMENT Primary KEy,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   vorname varchar(50) not null,
   nachname varchar(50) not null,
   email varchar(50) not null,
@@ -30,7 +28,7 @@ CREATE TABLE tbl_person (
 );
 
 CREATE TABLE tbl_band (
-  id int(11) NOT NULL AUTO_INCREMENT Primary KEy,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   fk_promoter int(11) not null,
   name_band varchar(50) not null,
 
@@ -38,7 +36,7 @@ CREATE TABLE tbl_band (
 );
 
 CREATE TABLE tbl_veranstaltung (
-  id int(11) NOT NULL AUTO_INCREMENT Primary Key,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   name_veranstaltung varchar(50) not null,
   von Date not null,
   bis Date not null,
@@ -50,7 +48,7 @@ CREATE TABLE tbl_veranstaltung (
 );
 
 CREATE TABLE tbl_musiker_band (
-  id int(11) NOT NULL AUTO_INCREMENT Primary Key,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   fk_musiker int(11) not null,
   fk_band int(11) not null,
   fk_instrument int(11) not null,
@@ -61,24 +59,16 @@ CREATE TABLE tbl_musiker_band (
   FOREIGN KEY(fk_instrument) REFERENCES tbl_instrument (id)
 );
 
-CREATE TABLE tbl_dj (
-  id int(11) NOT NULL AUTO_INCREMENT Primary KEy,
-  kuenstler_name varchar(50) not null,
-  plattform varchar(50) not null,
-  fk_person int(11) not null,
-
-  FOREIGN KEY(fk_person) REFERENCES tbl_person (id)
-);
-
 CREATE TABLE tbl_auftritt (
-  id int(11) NOT NULL AUTO_INCREMENT Primary KEy,
+  id int(11) NOT NULL AUTO_INCREMENT Primary KEY,
   fk_band int(11) not null,
   fk_veranstaltung int(11) not null,
+  kuenstlername_dj varchar(50),
   fk_dj int(11) not null,
   von datetime not null,
   bis datetime not null,
 
   FOREIGN KEY(fk_band) REFERENCES tbl_band (id),
   FOREIGN KEY (fk_veranstaltung) REFERENCES tbl_veranstaltung (id),
-  FOREIGN KEY(fk_dj) REFERENCES tbl_dj (id)
+  FOREIGN KEY (fk_dj) REFERENCES tbl_person (id)
 );
