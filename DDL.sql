@@ -47,8 +47,10 @@ CREATE TABLE tbl_veranstaltung (
   von Date,
   bis Date,
   fk_veranstalter int(11),
+  fk_ort int(11),
 
   PRIMARY KEY (id),
+  FOREIGN KEY (fk_ort) REFERENCES tbl_ort(id),
   FOREIGN KEY(fk_veranstalter) REFERENCES tbl_person (id)
 );
 
