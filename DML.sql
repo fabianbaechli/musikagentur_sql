@@ -5,3 +5,15 @@ INSERT INTO tbl_ort (plz, name_ortschaft, provinz, land) VALUES
   ("8053", "Zürich Stadt", "Zürich", "Schweiz"),
   ("90079", "Los Angeles", "California", "United States Of America"),
   ("10011", "New York", "Colorado", "United States Of America");
+
+INSERT INTO tbl_instrument (name_instrument) VALUES
+  ("Vocal"),
+  ("Piano"),
+  ("Gitarre, Elektronisch"),
+  ("Gitarre, Akustisch"),
+  ("Tamburin"),
+  ("Drums");
+
+INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALUES
+  ("Fabian", "Bächli", "fb@spline.ch", "0449450663", 1, "Chüeferistrasse 14c"),
+  ("Fabrice ")
