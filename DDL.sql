@@ -66,8 +66,8 @@ CREATE TABLE tbl_auftritt (
     fk_band INT(11) NOT NULL,
     fk_veranstaltung INT(11) NOT NULL,
     fk_dj INT(11) NOT NULL,
-    von DATETIME NOT NULL,
-    bis DATETIME NOT NULL,
+    von Datetime NOT NULL,
+    bis Datetime NOT NULL,
     FOREIGN KEY (fk_band)
         REFERENCES tbl_band (id),
     FOREIGN KEY (fk_veranstaltung)
