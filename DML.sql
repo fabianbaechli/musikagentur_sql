@@ -16,4 +16,11 @@ INSERT INTO tbl_instrument (name_instrument) VALUES
 
 INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALUES
   ("Fabian", "Bächli", "fb@spline.ch", "0449450663", 1, "Chüeferistrasse 14c"),
-  ("Fabrice ")
+  ("Fabrice", "Bosshard", "fabice.bosshard@gmail.com", "0449549050", 3, "Fliederweg 12"),
+  ("Leonard", "Schütz", "leni.schuetz@me.com", "0449430543", 6, "Mainstreet 59"),
+  ("Dennis", "Schäppi", "dennis.schaeppi@hotmail.com", "0791323212", 5, "Marketstreet 94"),
+  ("Nico", "Lutz", "nico.lutz@bluewin.ch", "0784561232", 4, "Bahnhofstrasse"),
+  ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
+
+INSERT INTO tbl_band (fk_promoter, name_band) VALUES
+  (1, "Sliky Johnson's")
