@@ -29,6 +29,7 @@ INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALU
   ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
 
 INSERT INTO tbl_band (fk_promoter, name_band) VALUES
+<<<<<<< HEAD
   (1, "Sliky Johnson's");
   
 INSERT INTO tbl_musiker_band (fk_musiker, fk_band,fk_instrument) VALUES
@@ -61,3 +62,13 @@ INSERT INTO tbl_auftritt (fk_band, fk_veranstaltung,fk_dj,von,bis) VALUES
   (1,3,2,'21:00','21:30'),
   (1,3,3,'21:30','22:00'),
   (2,2,4,'19:30','20:00');
+=======
+  (1, "Sliky Johnson's"),
+  (1, "Die Rollenden Steine"),
+  (2, "Raped By The Raccoon"),
+  (2, "Gibe Me Tha SuCC Boi"),
+  (1, "Attack Helicopter")
+
+INSERT INTO tbl_veranstaltung (name_veranstaltung, von, bis, fk_ort, fk_veranstalter) VALUES
+  ("Harem Festival", )
+>>>>>>> master
