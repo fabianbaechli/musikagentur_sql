@@ -59,8 +59,8 @@ SELECT
 FROM
     BandMitglieder;
 
-Drop View if exists AVeranstaltungZwischenZeitrahme;
-CREATE VIEW AVeranstaltungZwischenZeitrahme AS
+Drop View if exists VeranstaltungZwischenZeitrahme;
+CREATE VIEW VeranstaltungZwischenZeitrahme AS
     SELECT 
         V.von AS VeranstaltungVon,
         V.bis AS VeranstaltungBis,
@@ -80,7 +80,7 @@ CREATE VIEW AVeranstaltungZwischenZeitrahme AS
 SELECT 
     *
 FROM
-    AVeranstaltungZwischenZeitrahme;
+    VeranstaltungZwischenZeitrahme;
  
 Drop View if exists PersonenMitGleichemInstrument;
 CREATE VIEW PersonenMitGleichemInstrument AS
