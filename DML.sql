@@ -20,10 +20,33 @@ INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALU
   ("Leonard", "Schütz", "leni.schuetz@me.com", "0449430543", 6, "Mainstreet 59"),
   ("Dennis", "Schäppi", "dennis.schaeppi@hotmail.com", "0791323212", 5, "Marketstreet 94"),
   ("Nico", "Lutz", "nico.lutz@bluewin.ch", "0784561232", 4, "Bahnhofstrasse"),
+  ("Aline", "Freud", "aline.freud@bluewin.ch", "0784561232", 2, "Müllstrasse"),
+  ("Demir", "Sols", "demir.sols@bluewin.ch", "0784561232", 3, "Hopfweg"),
+  ("Henry", "Hamat", "henry.hamat@bluewin.ch", "0784561232", 4, "Sürlistrasse"),
+  ("Abnam", "Solut", "as@bluewin.ch", "0784561232", 5, "Moorweg"),
+  ("Savir", "Rabish", "sr@bluewin.ch", "0784561232", 5, "Sulmanweg"),
+  ("Lolo", "kurtz", "lolok@bluewin.ch", "0784561232", 1, "Bahnhofstrasse"),
   ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
 
 INSERT INTO tbl_band (fk_promoter, name_band) VALUES
   (1, "Sliky Johnson's");
+  
+INSERT INTO tbl_musiker_band (fk_musiker, fk_band,fk_instrument) VALUES
+  (1,2,1),
+  (2,2,2),
+  (3,2,3),
+  (4,2,4),
+  (5,3,5),
+  (6,3,1),
+  (7,3,2),
+  (8,3,2),
+  (9,3,3),
+  (10,3,4),
+  (11,4,5),
+  (2,5,1),
+  (3,4,3),
+  (12,4,2),
+  (12,1,4); 
   
 INSERT INTO tbl_auftritt (fk_band, fk_veranstaltung,fk_dj,von,bis) VALUES
   (1,1,1,'18:00','18:30'),
