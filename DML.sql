@@ -23,4 +23,18 @@ INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALU
   ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
 
 INSERT INTO tbl_band (fk_promoter, name_band) VALUES
-  (1, "Sliky Johnson's")
+  (1, "Sliky Johnson's");
+  
+INSERT INTO tbl_auftritt (fk_band, fk_veranstaltung,fk_dj,von,bis) VALUES
+  (1,1,1,'18:00','18:30'),
+  (2,1,2,'19:00','19:30'),
+  (3,2,3,'20:00','20:30'),
+  (5,3,4,'23:00','23:30'),
+  (2,4,4,'22:15','22:45'),
+  (5,5,5,'15:15','16:00'),
+  (2,3,3,'13:35','14:00'),
+  (3,2,1,'14:00','14:30'),
+  (4,1,2,'12:00','12:30'),
+  (1,3,2,'21:00','21:30'),
+  (1,3,3,'21:30','22:00'),
+  (2,2,4,'19:30','20:00');
