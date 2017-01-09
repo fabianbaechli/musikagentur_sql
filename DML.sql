@@ -36,7 +36,11 @@ INSERT INTO tbl_band (fk_promoter, name_band) VALUES
   (1, "Attack Helicopter");
 
 INSERT INTO tbl_veranstaltung (name_veranstaltung, von, bis, fk_ort, fk_veranstalter) VALUES
-  ("Harem Festival", )
+  ("Harem Festival", "2017-5-27", "2017-5-30", 1, 3),
+  ("Frauenfeld", "2017-7-6", "2017-7-9", 2, 3),
+  ("Greenfield", "2017-2-4", "2017-2-7", 1, 2),
+  ("Burning Man", "2017-3-3", "2017-3-10", 5, 3),
+  ("Tomorrowland", "2017-4-10", "2017-4-24", 6, 5);
 
 
 INSERT INTO tbl_musiker_band (fk_musiker, fk_band,fk_instrument) VALUES
