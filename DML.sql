@@ -23,4 +23,11 @@ INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALU
   ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
 
 INSERT INTO tbl_band (fk_promoter, name_band) VALUES
-  (1, "Sliky Johnson's")
+  (1, "Sliky Johnson's"),
+  (1, "Die Rollenden Steine"),
+  (2, "Raped By The Raccoon"),
+  (2, "Gibe Me Tha SuCC Boi"),
+  (1, "Attack Helicopter")
+
+INSERT INTO tbl_veranstaltung (name_veranstaltung, von, bis, fk_ort, fk_veranstalter) VALUES
+  ("Harem Festival", )
