@@ -19,14 +19,14 @@ INSERT INTO tbl_person (vorname, nachname, email, tel_num, fk_ort, strasse) VALU
   ("Fabrice", "Bosshard", "fabice.bosshard@gmail.com", "0449549050", 3, "Fliederweg 12"),
   ("Leonard", "Schütz", "leni.schuetz@me.com", "0449430543", 6, "Mainstreet 59"),
   ("Dennis", "Schäppi", "dennis.schaeppi@hotmail.com", "0791323212", 5, "Marketstreet 94"),
-  ("Nico", "Lutz", "nico.lutz@bluewin.ch", "0784561232", 4, "Bahnhofstrasse"),
-  ("Aline", "Freud", "aline.freud@bluewin.ch", "0784561232", 2, "Müllstrasse"),
-  ("Demir", "Sols", "demir.sols@bluewin.ch", "0784561232", 3, "Hopfweg"),
-  ("Henry", "Hamat", "henry.hamat@bluewin.ch", "0784561232", 4, "Sürlistrasse"),
+  ("Nico", "Lutz", "nico.lutz@bluewin.ch", "0724561232", 4, "Bahnhofstrasse"),
+  ("Aline", "Freud", "aline.freud@bluewin.ch", "0734561232", 2, "Müllstrasse"),
+  ("Demir", "Sols", "demir.sols@bluewin.ch", "0744561232", 3, "Hopfweg"),
+  ("Henry", "Hamat", "henry.hamat@bluewin.ch", "0764561232", 4, "Sürlistrasse"),
   ("Abnam", "Solut", "as@bluewin.ch", "0784561232", 5, "Moorweg"),
-  ("Savir", "Rabish", "sr@bluewin.ch", "0784561232", 5, "Sulmanweg"),
-  ("Lolo", "kurtz", "lolok@bluewin.ch", "0784561232", 1, "Bahnhofstrasse"),
-  ("Alex", "Maurer", "alex.maurer@gmail.com", "0766341232", 2, "Föhrenstrasse 32");
+  ("Savir", "Rabish", "sr@bluewin.ch", "0774561232", 5, "Sulmanweg"),
+  ("Lolo", "kurtz", "lolok@bluewin.ch", "0794561232", 1, "Bahnhofstrasse"),
+  ("Alex", "Maurer", "alex.maurer@gmail.com", "0767341232", 2, "Föhrenstrasse 32");
 
 INSERT INTO tbl_band (fk_promoter, name_band) VALUES
   (1, "Sliky Johnson's"),
@@ -40,6 +40,7 @@ INSERT INTO tbl_veranstaltung (name_veranstaltung, von, bis, fk_ort, fk_veransta
   ("Frauenfeld", "2017-7-6", "2017-7-9", 2, 3),
   ("Greenfield", "2017-2-4", "2017-2-7", 1, 2),
   ("Burning Man", "2017-3-3", "2017-3-10", 5, 3),
+  ("Frauenfeld", "2018-7-6", "2018-7-9", 2, 3),
   ("Tomorrowland", "2017-4-10", "2017-4-24", 6, 5);
 
 

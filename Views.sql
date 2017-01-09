@@ -1,32 +1,104 @@
 Drop View if exists VeranstaltungAuftrittBandDJ;
-Create View VeranstaltungAuftrittBandDJ as select
-V.name_veranstaltung as Veranstaltungsname,  O.name_ortschaft as Veranstaltungsort, V.von as VeranstaltungVon,  V.bis as VeranstaltungBis, VR.vorname as VeranstalterName, VR.nachname as VeranstalterNachname,name_band as Bandname, A.von as AuftrittVon, A.bis as AuftrittBis, DJ.vorname as DJVorname, DJ.nachname as DJNachname from tbl_auftritt A
-join tbl_veranstaltung V on V.id = A.fk_veranstaltung
-join tbl_Band B on B.id = A.fk_band
-join tbl_Person DJ on DJ.id = A.fk_dj
-join tbl_Person VR on VR.id = V.fk_veranstalter
-join tbl_ort O on O.id = V.fk_ort
-join tbl_Person P on P.id = B.fk_promoter
-order by V.id asc;
+CREATE VIEW VeranstaltungAuftrittBandDJ AS
+    SELECT 
+        V.name_veranstaltung AS Veranstaltungsname,
+        O.name_ortschaft AS Veranstaltungsort,
+        V.von AS VeranstaltungVon,
+        V.bis AS VeranstaltungBis,
+        VR.vorname AS VeranstalterName,
+        VR.nachname AS VeranstalterNachname,
+        name_band AS Bandname,
+        A.von AS AuftrittVon,
+        A.bis AS AuftrittBis,
+        DJ.vorname AS DJVorname,
+        DJ.nachname AS DJNachname
+    FROM
+        tbl_auftritt A
+            JOIN
+        tbl_veranstaltung V ON V.id = A.fk_veranstaltung
+            JOIN
+        tbl_Band B ON B.id = A.fk_band
+            JOIN
+        tbl_Person DJ ON DJ.id = A.fk_dj
+            JOIN
+        tbl_Person VR ON VR.id = V.fk_veranstalter
+            JOIN
+        tbl_ort O ON O.id = V.fk_ort
+            JOIN
+        tbl_Person P ON P.id = B.fk_promoter
+    ORDER BY V.id ASC;
 
-Select * from VeranstaltungAuftrittBandDJ;
+SELECT 
+    *
+FROM
+    VeranstaltungAuftrittBandDJ;
 
 Drop View if exists BandMitglieder;
-Create View BandMitglieder as select
-M.vorname as MitgliedName, M.nachname as MitgliedNachname, B.name_band as Bandname, P.vorname as PromoterName, P.nachname as PromoterNachname, I.name_instrument as Instrument from tbl_person as M
-join tbl_musiker_band as MB on MB.fk_musiker = M.id
-join tbl_instrument as I on I.id = MB.fk_instrument
-join tbl_band as B on B.id = MB.fk_band
-join tbl_person P on  B.fk_promoter = P.id 
-order by B.id asc;
+CREATE VIEW BandMitglieder AS
+    SELECT 
+        M.vorname AS MitgliedName,
+        M.nachname AS MitgliedNachname,
+        B.name_band AS Bandname,
+        P.vorname AS PromoterName,
+        P.nachname AS PromoterNachname,
+        I.name_instrument AS Instrument
+    FROM
+        tbl_person AS M
+            JOIN
+        tbl_musiker_band AS MB ON MB.fk_musiker = M.id
+            JOIN
+        tbl_instrument AS I ON I.id = MB.fk_instrument
+            JOIN
+        tbl_band AS B ON B.id = MB.fk_band
+            JOIN
+        tbl_person P ON B.fk_promoter = P.id
+    ORDER BY B.id ASC;
 
-Select * from BandMitglieder;
+SELECT 
+    *
+FROM
+    BandMitglieder;
 
 Drop View if exists AVeranstaltungZwischenZeitrahme;
-Create View AVeranstaltungZwischenZeitrahme as select
- V.von,V.bis, V.name_veranstaltung, VR.vorname, VR.nachname, O.name_ortschaft from tbl_veranstaltung V
- join tbl_person VR on VR.id = V.fk_veranstalter
- join tbl_ort O on O.id = V.fk_ort
- where V.von > '2017-05-01';
+CREATE VIEW AVeranstaltungZwischenZeitrahme AS
+    SELECT 
+        V.von AS VeranstaltungVon,
+        V.bis AS VeranstaltungBis,
+        V.name_veranstaltung AS VeranstaltungsName,
+        VR.vorname AS VeranstalterName,
+        VR.nachname AS VeranstalterVorname,
+        O.name_ortschaft AS VeranstalterOrt
+    FROM
+        tbl_veranstaltung V
+            JOIN
+        tbl_person VR ON VR.id = V.fk_veranstalter
+            JOIN
+        tbl_ort O ON O.id = V.fk_ort
+    WHERE
+        V.von > '2017-05-01';
  
- Select * from AVeranstaltungZwischenZeitrahme;
+SELECT 
+    *
+FROM
+    AVeranstaltungZwischenZeitrahme;
+ 
+Drop View if exists PersonenMitGleichemInstrument;
+CREATE VIEW PersonenMitGleichemInstrument AS
+    SELECT 
+        M.vorname AS Vorname,
+        M.nachname AS Nachname,
+        I.name_instrument AS Instrument
+    FROM
+        tbl_musiker_band MB
+            JOIN
+        tbl_person M ON M.id = MB.fk_musiker
+            JOIN
+        tbl_instrument I ON I.id = MB.fk_instrument
+    WHERE
+        I.id = 1;
+ 
+SELECT 
+    *
+FROM
+    PersonenMitGleichemInstrument;
+ 
