@@ -40,8 +40,8 @@ CREATE TABLE tbl_veranstaltung (
     name_veranstaltung VARCHAR(50) NOT NULL,
     von DATE NOT NULL,
     bis DATE NOT NULL,
-    fk_veranstalter INT(11) NOT NULL,
     fk_ort INT(11) NOT NULL,
+    fk_veranstalter INT(11) NOT NULL,
     FOREIGN KEY (fk_ort)
         REFERENCES tbl_ort (id),
     FOREIGN KEY (fk_veranstalter)
@@ -65,7 +65,7 @@ CREATE TABLE tbl_auftritt (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fk_band INT(11) NOT NULL,
     fk_veranstaltung INT(11) NOT NULL,
-    kuenstlername_dj VARCHAR(50),
+    kuenstlername_dj VARCHAR(50) null,
     fk_dj INT(11) NOT NULL,
     von DATETIME NOT NULL,
     bis DATETIME NOT NULL,
